@@ -1,4 +1,5 @@
 // Solara Bay v18 — fix pass: rewritten by the recorded agent.
+// Fix recording 3: re-confirmed by the recorded agent.
 // A tiny static server for game/ (Node 22, standard library only), so the
 // entry can be played locally without a build step: `node serve.ts` serves
 // game/ on http://localhost:8080. Development convenience only.
