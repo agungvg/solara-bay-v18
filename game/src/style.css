@@ -1,0 +1,107 @@
+/* Solara Bay v18 — HUD + meta screen styling. Dark glass panels, amber accents. */
+html, body { margin: 0; height: 100%; overflow: hidden; background: #0a1420; font-family: "Segoe UI", Arial, sans-serif; }
+#app { position: fixed; inset: 0; }
+#scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#hud { position: absolute; inset: 0; pointer-events: none; color: #fff; }
+.panel { background: rgba(8, 18, 32, 0.78); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 10px; padding: 10px 14px; backdrop-filter: blur(2px); }
+.hidden { display: none !important; }
+#mission-card { position: absolute; top: 14px; left: 14px; width: 340px; }
+#mission-title { color: #ffc93c; font-weight: 800; font-size: 17px; letter-spacing: 0.5px; }
+#mission-stage { font-size: 13px; color: #dfe9f5; margin-top: 4px; }
+#stage-bar { height: 6px; background: rgba(255,255,255,0.22); border-radius: 3px; margin: 7px 0; overflow: hidden; }
+#stage-fill { height: 100%; width: 33%; background: #ffc93c; border-radius: 3px; }
+#mission-next { font-size: 13px; font-weight: 700; }
+#radio-line { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); background: rgba(8,18,32,0.7); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 6px 16px; font-size: 13px; color: #e8f2ff; white-space: nowrap; }
+#air-banner { position: absolute; top: 52px; left: 50%; transform: translateX(-50%); background: #d21f2b; color: #fff; font-weight: 800; font-size: 14px; padding: 7px 18px; border-radius: 6px; letter-spacing: 1px; }
+#center-banner { position: absolute; top: 96px; left: 50%; transform: translateX(-50%); font-weight: 800; font-size: 14px; color: #ffd75e; padding: 8px 18px; white-space: nowrap; }
+#wanted-card { position: absolute; top: 14px; right: 14px; width: 210px; text-align: right; }
+#wanted-stars { font-size: 20px; letter-spacing: 3px; color: #ffc93c; }
+#wanted-stars .off { color: rgba(255,255,255,0.28); }
+#wanted-label { font-size: 12px; color: #ffb3a0; font-weight: 700; margin-top: 2px; }
+#cash { font-size: 30px; font-weight: 800; color: #7dff8a; line-height: 1.1; }
+#rp-bar { height: 6px; background: rgba(255,255,255,0.22); border-radius: 3px; overflow: hidden; margin: 6px 0 4px; }
+#rp-fill { height: 100%; width: 62%; background: #7dff8a; }
+#rank-line { font-size: 12px; color: #dfe9f5; }
+#clock { font-size: 22px; font-weight: 800; margin-top: 2px; }
+#police-panel { position: absolute; top: 220px; left: 14px; width: 230px; font-size: 13px; }
+.panel-head { color: #ff9d5c; font-weight: 800; font-size: 12px; letter-spacing: 1px; margin-bottom: 6px; }
+#unit-list div { display: flex; justify-content: space-between; padding: 1px 0; }
+#unit-list .role-pursue { color: #ff5c5c; font-weight: 700; }
+#unit-list .role-roadblock { color: #ffc93c; font-weight: 700; }
+#unit-list .role-search { color: #7db8ff; font-weight: 700; }
+#unit-list .role-air { color: #ff8ad8; font-weight: 700; }
+#police-feed { margin-top: 8px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.14); color: #ffd75e; font-size: 12px; }
+#crew-chips { position: absolute; left: 14px; top: 436px; display: flex; gap: 8px; }
+.chip { display: flex; align-items: center; gap: 6px; background: rgba(8,18,32,0.78); border: 1px solid rgba(255,255,255,0.14); border-radius: 20px; padding: 5px 10px 5px 5px; font-size: 12px; font-weight: 700; }
+.chip .face { width: 26px; height: 26px; border-radius: 50%; background: #ff6a1a; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; }
+.chip .cd { color: #ffc93c; font-weight: 400; }
+#weapons-panel { position: absolute; right: 14px; top: 330px; width: 250px; font-size: 13px; }
+#weapons-panel .wrow { display: flex; justify-content: space-between; padding: 3px 6px; border-radius: 4px; }
+#weapons-panel .wrow.sel { background: rgba(255, 201, 60, 0.25); outline: 1px solid #ffc93c; }
+#weapons-panel .wrow .ammo { color: #ffd75e; font-weight: 700; }
+#minimap-wrap { position: absolute; left: 14px; bottom: 14px; }
+#minimap { border-radius: 50%; border: 3px solid rgba(255,255,255,0.65); background: #0a2036; box-shadow: 0 0 0 3px rgba(0,0,0,0.35); }
+#minimap-label { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 1px; margin-top: 4px; text-shadow: 0 1px 3px #000; }
+#speed-card { position: absolute; right: 14px; bottom: 14px; width: 220px; text-align: right; }
+#speed { font-size: 40px; font-weight: 800; line-height: 1; }
+#speed span { font-size: 14px; color: #cfe0f2; }
+#vehicle-name { color: #ffc93c; font-weight: 800; font-size: 15px; }
+#vehicle-cond { font-size: 12px; color: #ffb3a0; font-weight: 700; }
+.vbar { display: flex; align-items: center; gap: 6px; margin-top: 5px; font-size: 11px; font-weight: 700; }
+.vbar .track { flex: 1; height: 7px; background: rgba(255,255,255,0.2); border-radius: 4px; overflow: hidden; }
+.vbar .track div { height: 100%; }
+#cond-fill { background: #ff8a3c; width: 62%; }
+#health-fill { background: #7dff8a; width: 100%; }
+#armor-fill { background: #6db3ff; width: 55%; }
+#dialogue { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; align-items: center; width: 560px; }
+#dialogue-face { width: 44px; height: 44px; min-width: 44px; border-radius: 50%; background: #ff6a1a; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; }
+#dialogue-text { font-size: 14px; line-height: 1.35; }
+#hint-line { position: absolute; top: 150px; left: 50%; transform: translateX(-50%); color: #ffd75e; font-weight: 800; font-size: 13px; letter-spacing: 0.5px; }
+#toast { position: absolute; top: 44%; left: 50%; transform: translate(-50%, -50%); background: rgba(8,18,32,0.85); border: 1px solid #ffc93c; color: #ffd75e; font-weight: 800; font-size: 18px; padding: 12px 22px; border-radius: 10px; }
+#mission-result { position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%); text-align: center; background: rgba(8,18,32,0.9); border: 2px solid #ffc93c; border-radius: 14px; padding: 22px 34px; }
+#mission-result .big { font-size: 30px; font-weight: 900; color: #7dff8a; letter-spacing: 1px; }
+#mission-result .pay { font-size: 20px; color: #ffd75e; font-weight: 800; margin-top: 6px; }
+#mission-result .sub { font-size: 13px; color: #dfe9f5; margin-top: 4px; }
+/* Meta screen */
+#meta-screen { position: absolute; inset: 0; background: #050a12; color: #e8f2ff; padding: 12px 22px; overflow: auto; z-index: 5; }
+#meta-head { display: flex; justify-content: space-between; align-items: baseline; }
+#meta-title { font-size: 22px; font-weight: 900; letter-spacing: 1px; }
+#meta-title span { color: #ffc93c; }
+#meta-cash { font-size: 22px; font-weight: 800; color: #7dff8a; }
+#meta-tabs { display: flex; gap: 8px; margin: 8px 0 10px; }
+#meta-tabs .tab { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; padding: 6px 14px; font-weight: 800; font-size: 13px; letter-spacing: 0.5px; }
+#meta-tabs .tab.active { background: #ffc93c; color: #111; }
+#meta-body { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 16px; }
+.meta-sec { font-size: 12px; font-weight: 800; letter-spacing: 1.5px; color: #9fc3e8; margin: 8px 0 4px; }
+.meta-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 9px 12px; font-size: 13px; }
+#citymap { width: 100%; height: auto; display: block; border-radius: 6px; }
+#completion-box { display: flex; gap: 16px; align-items: center; }
+#ring-wrap { width: 100px; min-width: 100px; }
+.ring-bg { fill: none; stroke: rgba(255,255,255,0.15); stroke-width: 11; }
+.ring-fg { fill: none; stroke: #ffc93c; stroke-width: 11; stroke-linecap: round; stroke-dasharray: 326.7; stroke-dashoffset: 110.7; transform: rotate(-90deg); transform-origin: center; }
+#ring-text { fill: #fff; font-size: 21px; font-weight: 800; text-anchor: middle; }
+#completion-title { font-size: 17px; font-weight: 800; }
+#completion-sub { font-size: 13px; color: #cfe0f2; margin-top: 4px; line-height: 1.5; }
+.trow { display: flex; justify-content: space-between; align-items: center; padding: 3px 0; }
+.trow .tlabel { color: #dfe9f5; }
+.trow .tval { color: #ffd75e; font-weight: 800; }
+.tbar { flex: 1; height: 8px; background: rgba(255,255,255,0.16); border-radius: 4px; overflow: hidden; margin: 0 10px; }
+.tbar div { height: 100%; background: #7dff8a; }
+.rate-chip { display: inline-block; width: 34px; height: 40px; line-height: 40px; text-align: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; font-weight: 900; font-size: 16px; margin: 0 4px 6px 0; }
+.rate-chip.gold { color: #ffc93c; border-color: #ffc93c; }
+.rate-chip .mnum { display: block; font-size: 9px; color: #9fc3e8; line-height: 1; margin-top: -8px; }
+.slot { border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; padding: 7px 10px; margin-bottom: 6px; }
+.slot.filled { border-color: #7dff8a; background: rgba(125,255,138,0.08); }
+.slot .sname { font-weight: 800; font-size: 13px; }
+.slot .sdetail { color: #ffd75e; font-size: 12px; margin-top: 2px; }
+.slot .sdate { color: #9fc3e8; font-size: 11px; margin-top: 2px; }
+#meta-foot { margin-top: 8px; font-size: 12px; color: #9fc3e8; letter-spacing: 0.5px; }
+/* Title / pause */
+#title-screen { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(180deg, rgba(5,10,18,0.25), rgba(5,10,18,0.72)); color: #fff; z-index: 6; }
+#title-logo { font-size: 84px; font-weight: 900; letter-spacing: 6px; color: #ffc93c; text-shadow: 0 4px 30px rgba(0,0,0,0.7); }
+#title-sub { font-size: 16px; letter-spacing: 4px; font-weight: 700; color: #e8f2ff; margin-top: 4px; }
+#title-prompt { margin-top: 34px; font-size: 19px; font-weight: 800; letter-spacing: 2px; animation: pulse 1.4s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+#title-controls { margin-top: 18px; font-size: 13px; color: #cfe0f2; }
+#pause-screen { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(5,10,18,0.6); color: #fff; font-size: 26px; font-weight: 900; letter-spacing: 2px; z-index: 6; }
+#status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }

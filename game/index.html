@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solara Bay — Open-World Crime</title>
+<link rel="stylesheet" href="./src/style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.min.js" } }
+</script>
+</head>
+<body>
+<div id="app">
+  <canvas id="scene"></canvas>
+  <div id="hud">
+    <div id="mission-card" class="panel">
+      <div id="mission-title">MISSION 1 "STEAL THE COMET"</div>
+      <div id="mission-stage">STAGE 1/3&nbsp;&nbsp;3:00</div>
+      <div id="stage-bar"><div id="stage-fill"></div></div>
+      <div id="mission-next">NEXT: REACH THE COMET</div>
+    </div>
+    <div id="radio-line">♪ SOLARA FM 98.6 — "Neon Coast" by The Palms</div>
+    <div id="air-banner" class="hidden">▲ AIR UNIT DEPLOYED</div>
+    <div id="center-banner" class="panel hidden"></div>
+    <div id="wanted-card" class="panel">
+      <div id="wanted-stars">★★★★★</div>
+      <div id="wanted-label">WANTED 0 — CLEAN</div>
+      <div id="cash">$0</div>
+      <div id="rp-bar"><div id="rp-fill"></div></div>
+      <div id="rank-line">RANK STREET • RP 1240</div>
+      <div id="clock">12:00</div>
+    </div>
+    <div id="police-panel" class="panel">
+      <div class="panel-head">KPD UNITS — <span id="unit-count">0 UNITS</span></div>
+      <div id="unit-list"></div>
+      <div id="police-feed"></div>
+    </div>
+    <div id="crew-chips"></div>
+    <div id="weapons-panel" class="panel"></div>
+    <div id="minimap-wrap">
+      <canvas id="minimap" width="220" height="220"></canvas>
+      <div id="minimap-label">SOLARA BAY — CORAL BAY</div>
+    </div>
+    <div id="speed-card" class="panel">
+      <div id="speed">0 <span>KM/H</span></div>
+      <div id="vehicle-name">ON FOOT</div>
+      <div id="vehicle-cond">—</div>
+      <div class="vbar"><span>COND</span><div class="track"><div id="cond-fill"></div></div></div>
+      <div class="vbar"><span>HEALTH</span><div class="track"><div id="health-fill"></div></div></div>
+      <div class="vbar"><span>ARMOR</span><div class="track"><div id="armor-fill"></div></div></div>
+    </div>
+    <div id="dialogue" class="panel"><div id="dialogue-face">UD</div><div id="dialogue-text"></div></div>
+    <div id="hint-line" class="panel hidden"></div>
+    <div id="toast" class="hidden"></div>
+    <div id="mission-result" class="hidden"></div>
+  </div>
+  <div id="meta-screen" class="hidden">
+    <div id="meta-head">
+      <div id="meta-title">SOLARA BAY — <span>MAP / STATS</span></div>
+      <div id="meta-cash">$21,340</div>
+    </div>
+    <div id="meta-tabs"></div>
+    <div id="meta-body">
+      <div class="meta-col">
+        <div class="meta-sec">CITY MAP — 8 DISTRICTS</div>
+        <div class="meta-box"><canvas id="citymap" width="560" height="240"></canvas></div>
+        <div class="meta-sec">COMPLETION</div>
+        <div class="meta-box" id="completion-box">
+          <div id="ring-wrap"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle id="ring-fg" class="ring-fg" cx="60" cy="60" r="52"/><text id="ring-text" x="60" y="66">66.1%</text></svg></div>
+          <div><div id="completion-title">STORY 66.1%</div><div id="completion-sub">5 of 8 missions complete<br>Gold ratings: 2</div></div>
+        </div>
+        <div class="meta-sec">SAVE SLOTS</div>
+        <div class="meta-box" id="save-slots"></div>
+      </div>
+      <div class="meta-col">
+        <div class="meta-sec">PROGRESS TRACKS</div>
+        <div class="meta-box" id="progress-tracks"></div>
+        <div class="meta-sec">MISSION RATINGS</div>
+        <div class="meta-box" id="mission-ratings"></div>
+        <div class="meta-sec">CAREER STATS</div>
+        <div class="meta-box" id="career-stats"></div>
+      </div>
+      <div class="meta-col">
+        <div class="meta-sec">WORKSHOP — SOLARA CUSTOMS</div>
+        <div class="meta-box" id="workshop"></div>
+        <div class="meta-sec">WEAPONS &amp; GEAR</div>
+        <div class="meta-box" id="gear-list"></div>
+        <div class="meta-sec">CREW</div>
+        <div class="meta-box" id="crew-list"></div>
+      </div>
+    </div>
+    <div id="meta-foot">M — BACK TO THE STREET &nbsp;•&nbsp; F9 — QUICK SAVE &nbsp;•&nbsp; SOLARA BAY v18</div>
+  </div>
+  <div id="title-screen">
+    <div id="title-logo">SOLARA BAY</div>
+    <div id="title-sub">OPEN-WORLD CRIME • LEONIDA COAST</div>
+    <div id="title-prompt">PRESS ENTER TO START</div>
+    <div id="title-controls">WASD drive / walk &nbsp;•&nbsp; E enter &amp; exit car &nbsp;•&nbsp; CLICK shoot &nbsp;•&nbsp; 1–6 weapons &nbsp;•&nbsp; M map &amp; stats</div>
+  </div>
+  <div id="pause-screen" class="hidden">PAUSED — ESC TO RESUME</div>
+  <p id="status" role="status" aria-live="polite"></p>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
