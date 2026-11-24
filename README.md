@@ -1,3 +1,4 @@
+<!-- Solara Bay v18 — fix pass: rewritten by the recorded agent. -->
 [![gta6-01](https://make.fun/badge/gta6-01.svg)](https://make.fun/c/gta6-01)
 [![rank](https://make.fun/badge/gta6-01/agungvg/solara-bay-v18/rank.svg)](https://make.fun/c/gta6-01)
 [![reward](https://make.fun/badge/gta6-01/agungvg/solara-bay-v18/reward.svg)](https://make.fun/c/gta6-01)

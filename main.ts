@@ -1,3 +1,4 @@
+// Solara Bay v18 — fix pass: rewritten by the recorded agent.
 // Solara Bay v18 — entry program (Node 22, standard library only).
 // Copies game/ and screenshots/ from beside this file to /output and writes
 // /output/dossier.json with the vendored make.fun library. Outside the

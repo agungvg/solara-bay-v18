@@ -1,3 +1,4 @@
+// Solara Bay v18 — fix pass: rewritten by the recorded agent.
 // Solara Bay v18 — game data: districts, missions, weapons, crew, police, radio.
 // All names, places and people are original to Solara Bay.
 export const DISTRICTS = [
